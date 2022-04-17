@@ -23,6 +23,9 @@ class ConfirmationSlider extends StatefulWidget {
   /// The button widget used on the moving element of the slider. Defaults to Icon(Icons.chevron_right).
   final Widget sliderButtonContent;
 
+  /// The padding height/width for the container.
+  final double contaitnerPadding;
+
   /// The shadow below the slider. Defaults to BoxShadow(color: Colors.black38, offset: Offset(0, 2),blurRadius: 2,spreadRadius: 0,).
   final BoxShadow? shadow;
 
@@ -64,6 +67,7 @@ class ConfirmationSlider extends StatefulWidget {
       color: Colors.white,
       size: 35,
     ),
+    this.contaitnerPadding = 5,
     this.text = "Slide to confirm",
     this.textStyle,
     required this.onConfirmation,
@@ -178,7 +182,7 @@ class ConfirmationSliderState extends State<ConfirmationSlider> {
       curve: Curves.ease,
       height: widget.height,
       width: widget.width,
-      padding: EdgeInsets.all(5),
+      padding: EdgeInsets.all(widget.contaitnerPadding),
       decoration: BoxDecoration(
         borderRadius: widget.backgroundShape ??
             BorderRadius.all(Radius.circular(widget.height)),
